@@ -1,0 +1,241 @@
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>UKDW Entry Dashboard</title>
+        <link
+            rel="stylesheet"
+            href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"
+        />
+        <link rel="stylesheet" href="/resources/demos/style.css" />
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+        <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+        <script>
+            $(function () {
+                $("#datepick").datepicker({
+                    prevText: "click for previous months",
+                    nextText: "click for next months",
+                    showOtherMonths: true,
+                    selectOtherMonths: false,
+                });
+                $("#datepick_1").datepicker({
+                    prevText: "click for previous months",
+                    nextText: "click for next months",
+                    showOtherMonths: true,
+                    selectOtherMonths: true,
+                });
+            });
+        </script>
+
+        <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+        <!-- Custom styles for this template -->
+        <link href="/css/dashboard.css" rel="stylesheet" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+            crossorigin="anonymous"
+        />
+    </head>
+    <body>
+      <header class="sticky-top shadow">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container">
+            <a class="navbar-brand" href="#">UKDW Entry</a>
+            </div>
+          </div>
+        </nav>
+    </header>
+
+        <div class="container-fluid">
+            <div class="row">
+                <nav
+                    id="sidebarMenu"
+                    class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse"
+                >
+                    <div class="position-sticky pt-3 sidebar-sticky">
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <a
+                                    class="nav-link active"
+                                    aria-current="page"
+                                    href="#"
+                                >
+                                    <span
+                                        data-feather="home"
+                                        class="align-text-bottom"
+                                    ></span>
+                                    Dashboard
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <span
+                                        data-feather="file"
+                                        class="align-text-bottom"
+                                    ></span>
+                                    Users
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <span
+                                        data-feather="shopping-cart"
+                                        class="align-text-bottom"
+                                    ></span>
+                                    Location
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <span
+                                        data-feather="users"
+                                        class="align-text-bottom"
+                                    ></span>
+                                    Complain
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+
+                <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                    <div
+                        class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
+                    >
+                        <h1 class="h2">Dashboard</h1>
+                        <div class="btn-toolbar mb-2 mb-md-0">
+                            <div class="btn-group me-2">
+                                <button
+                                    type="button"
+                                    class="btn btn-sm btn-outline-secondary"
+                                >
+                                    Export
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="table-responsive">
+                        <div
+                            id="w0-container"
+                            class="table-responsive kv-grid-container"
+                        >
+                            <table
+                                class="table text-nowrap table-striped table-bordered mb-0 kv-grid-table kv-table-wrap"
+                            >
+                                <thead>
+                                    <tr>
+                                        <th style="width: 4.95%">ID</th>
+                                        <th
+                                            data-col-seq="1"
+                                            style="width: 20.11%"
+                                        >
+                                            User
+                                        </th>
+                                        <th
+                                            data-col-seq="2"
+                                            style="width: 13.52%"
+                                        >
+                                            Tanggal
+                                        </th>
+                                        <th
+                                            data-col-seq="3"
+                                            style="width: 11.13%"
+                                        >
+                                            Masuk
+                                        </th>
+                                        <th
+                                            data-col-seq="4"
+                                            style="width: 10.46%"
+                                        >
+                                            Keluar
+                                        </th>
+                                        <th
+                                            data-col-seq="5"
+                                            style="width: 13.81%"
+                                        >
+                                            Action
+                                        </th>
+                                    </tr>
+
+                                    <td>
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            name="id"
+                                        />
+                                    </td>
+                                    <td>
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            name="user"
+                                        />
+                                    </td>
+                                    <td>
+                                        <input type="text" id="datepick" class="form-control" name="tanggal"/>
+                                    </td>
+                                    <td>
+                                        <input type="time" id="appt" class="form-control" name="masuk">
+                                    </td>
+                                    <td>
+                                        <input type="time" id="appt" class="form-control" name="keluar">
+                                    </td>
+                                </thead>
+                                <tbody>
+                                    <tr class="w0" data-key="260481">
+                                        <td>1</td>
+                                        <td class="w0" data-col-seq="1">
+                                            Terarium/Virarium
+                                        </td>
+                                        <td class="w0" data-col-seq="2">
+                                            SKEVIVA-01STAR
+                                        </td>
+                                        <td class="w0" data-col-seq="3">
+                                            Standar
+                                        </td>
+                                        <td class="w0" data-col-seq="4">
+                                            Baru
+                                        </td>
+                                        <td>
+                                            <button type="button" class="btn btn-warning">Edit</button>
+                                        <button type="button" class="btn btn-danger">Delete</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+
+        <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js"
+            integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"
+            integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha"
+            crossorigin="anonymous"
+        ></script>
+        <script src="/js/dashboard.js"></script>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+            integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+            integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
+            crossorigin="anonymous"
+        ></script>
+    </body>
+</html>
